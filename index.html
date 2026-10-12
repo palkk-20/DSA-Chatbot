@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Tutor Chatbot</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div class="app__brand">
+          <span class="app__logo">&lt;/&gt;</span>
+          <div>
+            <h1>DSA Tutor</h1>
+            <p>Flask backend · Claude API</p>
+          </div>
+        </div>
+        <div class="header__actions">
+          <select id="modelSelect">
+            <option value="gemini-3.1-flash" selected>gemini-3.1-flash</option>
+            <option value="gemini-3.1-flash-lite">gemini-3.1-flash-lite</option>
+            <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+          </select>
+          <button id="resetBtn" class="btn btn--ghost btn--small" type="button">New chat</button>
+        </div>
+      </header>
+
+      <main class="chat" id="chat">
+        <div class="message message--bot">
+          <div class="message__avatar">🤖</div>
+          <div class="message__bubble">
+            Hi! I'm your DSA tutor. Paste a problem or ask about a concept and
+            I'll guide you through it step by step.
+          </div>
+        </div>
+      </main>
+
+      <form id="chatForm" class="composer">
+        <textarea
+          id="userInput"
+          class="composer__input"
+          placeholder="Ask about an algorithm, paste a problem, or share your code..."
+          rows="1"
+          required
+        ></textarea>
+        <button type="submit" id="sendBtn" class="btn btn--primary">Send</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
